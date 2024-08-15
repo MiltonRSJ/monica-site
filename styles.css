@@ -1,0 +1,194 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.photo-container {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+header {
+    background-image: linear-gradient(135deg, #90ebab, #1fc95a);
+    color: white;
+    text-align: center;
+    padding: 1px 0.5px;
+}
+
+header h1 {
+    font-style: italic; /* Texto itálico */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #114b85; /* Azul mais escuro */
+    color: #004d00;
+}
+
+nav a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+nav a:hover {
+    background-color: #004c99;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.section-img {
+    width: 40%;
+    max-width: 300px;
+    height: auto;
+}
+
+.section-text {
+    width: 50%;
+    text-align: left;
+}
+
+#minha-historia .section-img {
+    order: -1; /* Imagem à esquerda */
+}
+
+#objetivos .section-img {
+    order: 1; /* Imagem à direita */
+}
+
+#valores .section-img {
+    order: -1; /* Imagem à esquerda */
+}
+
+#familia .section-img {
+    order: 1; /* Imagem à direita */
+}
+
+#minha-historia,
+#valores {
+    background-color: #e7f7e9; /* Verde claro */
+}
+
+#objetivos,
+#familia {
+    background-color: #e7f7e9; /* Amarelo claro */
+}
+
+#redes-sociais {
+    background-color: #1963b3;
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.social-icon {
+    text-align: center;
+}
+
+.social-icon i {
+    color: white; /* Azul */
+    font-size: 2em;
+}
+
+.social-icon p {
+    margin-top: 10px;
+    color: white; /* Azul */
+    font-size: 1em;
+}
+
+.social-icon:hover i {
+    color: white; /* Azul mais escuro */
+}
+
+footer {
+    background-color: #0056b3; /* Azul */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Carrosel de imgens */
+/* Carrossel de Fotos */
+#carrossel {
+    background-color: #e7f7e9; /* Verde claro */
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
