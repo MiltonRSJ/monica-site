@@ -24,8 +24,20 @@ header {
     padding: 1px 0.5px;
 }
 
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaçamento entre a imagem e o texto */
+}
+
+.header-logo {
+    width: 50px; /* Largura da logo */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
 header h1 {
     font-style: italic; /* Texto itálico */
+    margin: 0;
 }
 
 nav {
