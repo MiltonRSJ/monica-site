@@ -52,6 +52,12 @@ header {
 
 #produtos {
     padding-top: 100px;
+    padding-bottom: 20px;
+}
+
+#contatos {
+    padding-top: 20px; /* Reduzi o padding superior da seção de contatos */
+    padding-bottom: 100px;
 }
 
 .header-content { display: flex; justify-content: space-between; align-items: center; }
@@ -74,11 +80,11 @@ nav ul li a:hover { color: #b38728; }
     background-color: var(--light-grey);
 }
 
-.hero-logo { max-width: 300px; width: 80%; object-fit: contain; }
+.hero-logo { max-width: 500px; width: 80%; object-fit: contain; }
 
 /* Seções */
 .section { padding: 100px 20px; text-align: center; }
-.section-title { font-size: 2.5rem; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 3px; }
+.section-title { font-size: 2.5rem; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 3px; }
 
 .gold-gradient-text {
     background: var(--gold);
@@ -89,7 +95,7 @@ nav ul li a:hover { color: #b38728; }
 /* Carrossel */
 .carousel-container {
     position: relative;
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -117,17 +123,28 @@ nav ul li a:hover { color: #b38728; }
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: var(--gold);
-    border: none;
-    padding: 15px;
+    background: transparent; /* Sem preenchimento */
+    border: 2px solid #bf953f; /* Contorno dourado (base do seu gradiente) */
+    padding: 10px 15px;
     cursor: pointer;
-    border-radius: 50%;
-    color: white;
-    font-size: 1.2rem;
+    border-radius: 8px; /* Bordas levemente arredondadas */
+    color: var(--dark-grey); /* Seta cinza (usando sua variável) */
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+/* Efeito hover suave para feedback visual */
+.carousel-btn:hover {
+    border-color: #fcf6ba; /* Dourado mais claro no hover */
+    background: rgba(191, 149, 63, 0.05);
+}
+
+.prev { left: 15px; }
+.next { right: 15px; }
 
 /* Contatos */
 .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 2rem; flex-wrap: wrap; }
@@ -163,7 +180,29 @@ nav ul li a:hover { color: #b38728; }
 
 /* Responsividade Mobile */
 @media (max-width: 768px) {
-    .header-content { flex-direction: column; gap: 10px; }
-    nav ul li { margin: 0 10px; }
-    .section-title { font-size: 1.8rem; }
+    /* Ajuste do Header para comportar a logo maior */
+    header {
+        padding: 0.5rem 0; /* Diminuímos o padding vertical para compensar a logo */
+    }
+
+    .header-content {
+        flex-direction: column; /* Mantém os itens empilhados conforme seu projeto */
+        gap: 5px;
+    }
+
+    /* 1) Aumentar a logo no mobile sem redimensionar o header bruscamente */
+    .header-logo-img {
+        height: 80px; /* Aumentamos de 60px para 80px no mobile */
+        width: auto;
+        margin-bottom: 5px;
+    }
+
+    /* Ajuste fino nos links para não ficarem colados na logo */
+    nav ul {
+        margin-top: 5px;
+    }
+
+    nav ul li {
+        margin: 0 15px; /* Espaçamento lateral entre 'Produtos' e 'Contatos' */
+    }
 }
