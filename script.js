@@ -1,29 +1,32 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const carousel = document.querySelector('.carousel');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const prevButton = document.querySelector('.prev-button');
-    const nextButton = document.querySelector('.next-button');
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
     
     let currentIndex = 0;
-    const intervalTime = 5000; // Tempo de 5 segundos para troca automática
 
-    function updateCarousel() {
-        carousel.style.transform = `translateX(${-currentIndex * 100}%)`;
-    }
+    const updateCarousel = () => {
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    };
 
-    function nextSlide() {
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % slides.length; // Slider Infinito
+        updateCarousel();
+    });
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length; // Slider Infinito
+        updateCarousel();
+    });
+
+    // Ajuste automático caso a janela mude de tamanho
+    window.addEventListener('resize', updateCarousel);
+
+    // Opcional: Auto-play
+    setInterval(() => {
         currentIndex = (currentIndex + 1) % slides.length;
         updateCarousel();
-    }
-
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateCarousel();
-    }
-
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
-
-    // Troca automática das imagens a cada 5 segundos
-    setInterval(nextSlide, intervalTime);
+    }, 5000);
 });

@@ -1,0 +1,169 @@
+:root {
+    --white: #ffffff;
+    --light-grey: #f9f9f9;
+    --dark-grey: #333333;
+    --gold: linear-gradient(45deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body { background-color: var(--white); color: var(--dark-grey); }
+
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+/* Logo no Header */
+.header-logo-img {
+    height: 50px; /* Ajuste conforme a necessidade do menu */
+    width: auto;
+    display: block;
+}
+
+/* Capa Preenchendo a Página Toda */
+.hero-full-bg {
+    height: 100vh; /* Ocupa 100% da altura da viewport */
+    width: 100%;
+    margin-top: 0; 
+    background-image: url('./images/mrp/logo.png'); /* Caminho da sua imagem 801x447 */
+    background-size: cover;    /* Faz a imagem preencher todo o container */
+    background-position: center; /* Centraliza a imagem no preenchimento */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+#produtos {
+    padding-top: 100px;
+}
+
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+
+.logo-text { font-weight: bold; font-size: 1.5rem; letter-spacing: 2px; }
+.logo-text span { font-weight: 300; font-size: 0.9rem; display: block; }
+
+nav ul { display: flex; list-style: none; }
+nav ul li { margin-left: 2rem; }
+nav ul li a { text-decoration: none; color: var(--dark-grey); font-weight: 500; transition: 0.3s; }
+nav ul li a:hover { color: #b38728; }
+
+/* Hero */
+.hero {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    background-color: var(--light-grey);
+}
+
+.hero-logo { max-width: 300px; width: 80%; object-fit: contain; }
+
+/* Seções */
+.section { padding: 100px 20px; text-align: center; }
+.section-title { font-size: 2.5rem; margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 3px; }
+
+.gold-gradient-text {
+    background: var(--gold);
+    /* -webkit-background-clip: text; */
+    -webkit-text-fill-color: transparent;
+}
+
+/* Carrossel */
+.carousel-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.carousel-item img {
+    max-width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--gold);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Contatos */
+.social-links { display: flex; justify-content: center; gap: 30px; margin-top: 2rem; flex-wrap: wrap; }
+.social-icon {
+    padding: 10px 25px;
+    border: 2px solid #b38728;
+    text-decoration: none;
+    color: var(--dark-grey);
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.social-icon:hover { background: var(--gold); color: white; border-color: transparent; }
+
+/* WhatsApp Float */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1001;
+}
+
+.whatsapp-float img { width: 35px; }
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .header-content { flex-direction: column; gap: 10px; }
+    nav ul li { margin: 0 10px; }
+    .section-title { font-size: 1.8rem; }
+}
